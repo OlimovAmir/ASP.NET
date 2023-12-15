@@ -7,3 +7,9 @@
 body {
     background: silver;
 }
+
+
+form {
+    display: flex;
+
+}

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASP.NET.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NET.Controllers
 {
@@ -7,6 +8,16 @@ namespace ASP.NET.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Check(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("/");
+            }
+            return View("Index");
         }
     }
 }
